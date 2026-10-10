@@ -1,41 +1,218 @@
-# Nombre del laboratorio 
-
-## Objetivo de la práctica:
+# Laboratorio 4: Sistema Operativo Linux
+## Objetivos
 Al finalizar la práctica, serás capaz de:
-- Objetivo1
-- Objetivo2
-- Objetivo3
 
-## Objetivo Visual 
-Crear un diagrama o imagen que resuma las actividades a realizar, un ejemplo es la siguiente imagen. 
+4.1 Monitoreo de Procesos: Identificar el consumo de recursos en tiempo real y gestionar el ciclo de vida de los programas mediante el envío de señales (SIGTERM, SIGKILL).
 
-![diagrama1](../images/img1.png)
+4.2 Auditoría de Logs (Journaling): Navegar y filtrar los registros del sistema con journalctl para diagnosticar fallos críticos y eventos del kernel.
 
-## Duración aproximada:
-- xx minutos.
+4.3 Gestión de Recursos (Memoria/Disco): Interpretar estadísticas de hardware mediante free y df para prevenir caídas por saturación de almacenamiento o memoria RAM.
 
-## Tabla de ayuda:
-Agregar una tabla con la información que pueda requerir el participante durante el laboratorio, como versión de software, IPs de servers, usuarios y credenciales de acceso.
-| Contraseña | Correo | Código |
-| --- | --- | ---|
-| Netec2024 | edgardo@netec.com | 123abc |
+4.4 Archivado y Compresión: Dominar el empaquetado de archivos con tar y su posterior compresión para optimizar el espacio y facilitar las copias de seguridad.
+
+4.5 Automatización de Tareas (Cron): Programar la ejecución automática de scripts y comandos recurrentes mediante el demonio crontab.
+<br/><br/>
+
+## Tiempo estimado
+- 80 minutos.
+<br/><br/>
+
+## Objetivo visual 
+
+![diagrama1](../images/img5.jpg)
+<br/><br/>
+
+## Tabla de Ayuda
+
+## Gestión de Procesos y Señales
+
+| Categoría | Comando | Acción Principal | Ejemplo de Uso |
+| :--- | :--- | :--- | :--- |
+| **Monitor** | `top` | Monitor dinámico de procesos en tiempo real. | `top` |
+| **Monitor** | `htop` | Versión interactiva y visual de top (si está inst.). | `htop` |
+| **Listar** | `ps` | Instantánea de los procesos actuales. | `ps aux` |
+| **Finalizar** | `kill` | Enviar una señal a un proceso mediante su PID. | `kill -15 1234` |
+| **Finalizar** | `pkill` | Finalizar procesos por su nombre. | `pkill nginx` |
+| **Estado** | `uptime` | Ver carga promedio y tiempo de encendido. | `uptime` |
+
+### Señales comunes:
+* **SIGTERM (15)**: Terminación suave. Permite al programa cerrar archivos y limpiar antes de salir.
+* **SIGKILL (9)**: Terminación forzosa. El kernel mata el proceso de inmediato (usar solo si falla el 15).
+
+---
+
+## Diagnóstico de Recursos y Logs
+
+| Recurso | Comando | Función | Ejemplo |
+| :--- | :--- | :--- | :--- |
+| **Memoria** | `free` | Ver uso de RAM y partición de intercambio (SWAP). | `free -h` |
+| **Disco** | `df` | Reporte de espacio disponible en particiones. | `df -h` |
+| **Archivos** | `du` | Estimar el espacio usado por carpetas/archivos. | `du -sh /var` |
+| **Logs** | `journalctl` | Consultar el registro central del sistema (Systemd). | `journalctl -xe` |
+| **Logs** | `tail` | Ver las últimas líneas de un archivo de registro. | `tail -f /var/log/syslog` |
+
+---
+
+## Archivado, Compresión y Automatización
+
+Para respaldos y tareas repetitivas, estos comandos son el estándar en administración.
+
+| Herramienta | Acción | Ejemplo de Uso |
+| :--- | :--- | :--- |
+| **Empaquetar** | `tar` | Crear o extraer un archivo "bola" (archivar). | `tar -cvf backup.tar /etc` |
+| **Comprimir** | `gzip` | Comprimir un archivo (formato .gz). | `gzip archivo.tar` |
+| **Extraer** | `tar -xvf` | Descomprimir y extraer en un solo paso. | `tar -xzvf backup.tar.gz` |
+| **Cron** | `crontab -e` | Editar la tabla de tareas automatizadas. | `crontab -e` 
+
+### Sintaxis de Crontab:
+`* * * * * comando_a_ejecutar`
+1. **Minuto** (0-59)
+2. **Hora** (0-23)
+3. **Día del mes** (1-31)
+4. **Mes** (1-12)
+5. **Día de la semana** (0-6, donde 0 es Domingo)
+<br/><br/>
 
 ## Instrucciones 
-<!-- Proporciona pasos detallados sobre cómo configurar y administrar sistemas, implementar soluciones de software, realizar pruebas de seguridad, o cualquier otro escenario práctico relevante para el campo de la tecnología de la información -->
-### Tarea 1. Descripción de la tarea a realizar.
-Paso 1. Debe de relatar el instructor en verbo infinito, claro y conciso cada actividad para ir construyendo paso a paso en el objetivo de la tarea.
+<br/><br/>
+## Laboratorio 4.1: Monitoreo de Procesos (Señales)
 
-Paso 2. <!-- Añadir instrucción -->
+- **Objetivo**: Identificar procesos costosos y aprender a finalizarlos de forma controlada o forzada.
+- **Tiempo estimado**: 15 minutos.
+- **Comandos relacionados**: `top`, `htop`, `kill`, `pkill`.
 
-Paso 3. <!-- Añadir instrucción -->
+### Desarrollo paso a paso:
 
-### Tarea 2. Descripción de la tarea a realizar.
-Paso 1. Debe de relatar el instructor en verbo infinito, claro y conciso cada actividad para ir construyendo paso a paso en el objetivo de la tarea.
+1.  **Ejecución de monitor**: Abrir `top` (o `htop` si está instalado).
+2.  **Identificación**: Presionar `M` (en top) para ordenar por uso de Memoria o `P` para CPU. Identificar el PID (Process ID) del proceso con mayor consumo.
+3.  **Simulación de proceso**: En otra terminal, ejecutar un comando infinito en segundo plano:
+    ```bash
+    sleep 1000 &
+    ```
+4.  **Envío de señal SIGTERM (15)**: Intentar cerrar el proceso de forma amable:
+    ```bash
+    kill -15 [PID_del_sleep]
+    ```
+5.  **Envío de señal SIGKILL (9)**: Si un proceso no responde, forzar el cierre inmediato:
+    ```bash
+    kill -9 [PID]
+    ```
 
-Paso 2. <!-- Añadir instrucción -->
+**Resultado esperado**: El alumno debe observar cómo el proceso desaparece de la lista de `top` tras enviar la señal correspondiente.
 
-Paso 3. <!-- Añadir instrucción -->
+---
 
-### Resultado esperado
-En esta sección, se debe mostrar el resultado esperado de nuestro laboratorio
-![imagen resultado](../images/img3.png)
+## Laboratorio 4.2: Verificación de Logs (Journaling)
+
+- **Objetivo**: Navegar por los registros del sistema para auditoría y resolución de problemas.
+- **Tiempo estimado**: 15 minutos.
+- **Comandos relacionados**: `journalctl`, `tail`, `less`.
+
+### Desarrollo paso a paso:
+
+1.  **Lectura de logs en tiempo real**: Ejecutar el siguiente comando y observar cómo se generan eventos en vivo:
+    ```bash
+    tail -f /var/log/syslog
+    ```
+    *(O `/var/log/messages` en distribuciones basadas en RHEL).*
+2.  **Filtrado por arranque**: Usar `journalctl` para ver solo los mensajes desde el último inicio del sistema:
+    ```bash
+    journalctl -b
+    ```
+3.  **Filtrado por prioridad**: Ver únicamente los errores críticos registrados:
+    ```bash
+    journalctl -p err
+    ```
+
+**Resultado esperado**: El alumno identificará servicios que fallaron durante el arranque o advertencias emitidas por el kernel.
+
+---
+
+## Laboratorio 4.3: Uso de Memoria y Disco
+
+- **Objetivo**: Interpretar estadísticas de hardware para prevenir caídas por falta de recursos.
+- **Tiempo estimado**: 10 minutos.
+- **Comandos relacionados**: `free`, `df`, `du`.
+
+### Desarrollo paso a paso:
+
+1.  **Estado de Memoria**: Ejecutar el siguiente comando y analizar la columna "available" vs "free". Identificar si se está haciendo uso de la partición SWAP:
+    ```bash
+    free -h
+    ```
+2.  **Estado de Discos**: Ver el porcentaje de ocupación de las particiones montadas:
+    ```bash
+    df -h
+    ```
+3.  **Localización de archivos pesados**: Usar `du` para identificar qué carpetas dentro de `/var` consumen más espacio:
+    ```bash
+    sudo du -sh /var/* | sort -h
+    ```
+
+**Resultado esperado**: Comprensión de la diferencia entre memoria física y virtual, y la ocupación de bloques en disco.
+
+---
+
+## Laboratorio 4.4: Compresión y Archivado (Backups)
+
+- **Objetivo**: Empaquetar y comprimir datos respetando los permisos de los archivos.
+- **Tiempo estimado**: 20 minutos.
+- **Comandos relacionados**: `tar`, `gzip`, `ls -lh`.
+
+### Desarrollo paso a paso:
+
+1.  **Crear el archivo tar (archivar)**:
+    ```bash
+    sudo tar -cvf backup_etc.tar /etc
+    ```
+2.  **Comprimir con gzip**:
+    ```bash
+    gzip backup_etc.tar
+    ```
+3.  **Verificación de reducción de tamaño**: Comparar el tamaño de la carpeta original con el archivo resultante:
+    ```bash
+    ls -lh backup_etc.tar.gz
+    ```
+4.  **Listar contenido sin extraer**: Verificar qué archivos hay dentro del comprimido:
+    ```bash
+    tar -tvf backup_etc.tar.gz
+    ```
+
+**Resultado esperado**: Un único archivo comprimido (`.tar.gz`) que contiene de forma segura la configuración del sistema.
+
+---
+
+## Laboratorio 4.5: Programación de Tareas (Crontab)
+
+- **Objetivo**: Automatizar procesos repetitivos mediante el demonio `cron`.
+- **Tiempo estimado**: 20 minutos.
+- **Comandos relacionados**: `crontab -e`, `crontab -l`, `tail`.
+
+### Desarrollo paso a paso:
+
+1.  **Abrir el editor de tareas**:
+    ```bash
+    crontab -e
+    ```
+2.  **Programar la tarea**: Añadir la siguiente línea al final del archivo (cada 5 minutos):
+    ```text
+    */5 * * * * echo "Sistema Activo - $(date)" >> /tmp/monitor.log
+    ```
+    *(Explicación de campos: Minuto, Hora, Día, Mes, Día de la semana).*
+3.  **Verificación**: Esperar al ciclo de ejecución y revisar el archivo de log:
+    ```bash
+    cat /tmp/monitor.log
+    ```
+
+**Resultado esperado**: El archivo `/tmp/monitor.log` se actualizará automáticamente con la frase y la fecha cada 5 minutos.
+
+---
+
+## Resumen de comandos para el examen LPIC-1 (Cap 5)
+
+| Categoría | Comando |
+| :--- | :--- |
+| **Procesos** | `top`, `kill`, `ps`, `uptime` |
+| **Recursos** | `free`, `df`, `du`, `iostat` |
+| **Compresión** | `tar`, `gzip`, `bzip2`, `xz` |
+| **Automatización** | `crontab`, `at` |
