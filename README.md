@@ -16,46 +16,46 @@ Te damos la bienvenida a la **plataforma de laboratorios** del curso **Linux Ess
 Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia práctica. Haz clic en los enlaces para comenzar.
 
 
-### [Práctica 1. Nombre de la práctica](Capitulo01/README.md) 
+### [Práctica 1. Conceptos del Sistema de Archivos y Comandos Básicos](Capitulo01/README.md) 
 
-  - **Descripción**: xxx.
+  - **Descripción**: Dominar la administración básica de Linux mediante la extracción de datos técnicos, la gestión de licencias de software, el uso eficiente de herramientas de ayuda, la optimización del shell y la navegación entre terminales virtuales para resolver tareas técnicas de forma autónoma.
 
-  - ⏱️ **Duración estimada**: xx min.
-
-
-### [Práctica 2. Nombre de la práctica](Capitulo02/README.md)
-
-  - **Descripción**: xxx.
-
-  - ⏱️ **Duración estimada**: xx min.
+  - ⏱️ **Duración estimada**: 120 min.
 
 
-### [Práctica 3. Nombre de la práctica](Capitulo03/README.md)
+### [Práctica 2. Gestión de Usuarios, Grupos y Permisos](Capitulo02/README.md)
 
-  - **Descripción**: xxx.
+  - **Descripción**: Administrar el control de acceso y la identidad en Linux mediante la gestión de usuarios y grupos, la aplicación de permisos estándar y especiales, y la delegación segura de privilegios para garantizar la integridad y confidencialidad del sistema.
 
-  - ⏱️**Duración estimada**: xx min.
-
-
-### [Práctica 4. Nombre de la práctica](Capitulo04/README.md)
-
-  - **Descripción**: xxx.
-
-  - ⏱️**Duración estimada**: xx min.
+  - ⏱️ **Duración estimada**: 120 min.
 
 
-### [Práctica 5. Nombre de la práctica](Capitulo05/README.md)
+### [Práctica 3. Herramientas de Usuario y Redirección](Capitulo03/README.md)
 
-  - **Descripción**: xxx.
+  - **Descripción**: Dominar el procesamiento de información en Linux mediante el uso de tuberías, redirecciones y filtros de texto, complementado con el manejo del editor Vim para la administración eficiente de archivos y flujos de datos del sistema.
 
-  - ⏱️**Duración estimada**: xx min.
+  - ⏱️**Duración estimada**: 120 min.
 
 
-### [Práctica 6. Nombre de la práctica](Capitulo06/README.md)
+### [Práctica 4. Sistema operativo Linux](Capitulo04/README.md)
 
-  - **Descripción**: xxx.
+  - **Descripción**: Gestionar la salud y el rendimiento del sistema mediante el monitoreo de procesos, la auditoría de registros y la administración de recursos, integrando técnicas de archivado y automatización de tareas para garantizar la continuidad operativa.
 
-  - ⏱️**Duración estimada**: xx min.
+  - ⏱️**Duración estimada**: 120 min.
+
+
+### [Práctica 5. Gestión de Software y Paquetes](Capitulo05/README.md)
+
+  - **Descripción**: Administrar el ciclo de vida del software en Linux mediante el uso de gestores de paquetes de alto y bajo nivel, la resolución de dependencias y la configuración de repositorios para garantizar un sistema actualizado, seguro y funcional.
+
+  - ⏱️**Duración estimada**: 120 min.
+
+
+### [Práctica 6. Redes Básicas en Linux](Capitulo06/README.md)
+
+  - **Descripción**: Configurar y diagnosticar la conectividad de red en Linux mediante la administración de interfaces, la resolución de nombres DNS, la auditoría de servicios activos y la transferencia segura de datos entre hosts para garantizar una comunicación eficiente y protegida.
+
+  - ⏱️**Duración estimada**: 120 min.
 
 
 ### [Práctica 7. Creación de un Servicio Persistente, Seguro y Monitoreado tras un Boot Personalizado](Capitulo07/README.md)
