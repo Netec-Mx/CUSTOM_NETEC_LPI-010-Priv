@@ -30,7 +30,7 @@ Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia pr
   - ⏱️ **Duración estimada**: 120 min.
 
 
-### [Práctica 3.Construir pipelines y usar filtros para extraer datos](Capitulo03/README.md)
+### [Práctica 3. Construir pipelines y usar filtros para extraer datos](Capitulo03/README.md)
 
   - **Descripción**: Dominar el procesamiento de información en Linux mediante el uso de tuberías, redirecciones y filtros de texto, complementado con el manejo del editor Vim para la administración eficiente de archivos y flujos de datos del sistema.
 
