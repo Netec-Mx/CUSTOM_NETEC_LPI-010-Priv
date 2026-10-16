@@ -41,7 +41,7 @@ Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia pr
 
   - **Descripción**: Gestionar la salud y el rendimiento del sistema mediante el monitoreo de procesos, la auditoría de registros y la administración de recursos, integrando técnicas de archivado y automatización de tareas para garantizar la continuidad operativa.
 
-  - ⏱️**Duración estimada**: 120 min.
+  - ⏱️**Duración estimada**: 80 min.
 
 
 ### [Práctica 5. Gestión de Software y Paquetes](Capitulo05/README.md)
