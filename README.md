@@ -51,7 +51,7 @@ Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia pr
   - ⏱️**Duración estimada**: 120 min.
 
 
-### [Práctica 6. Redes Básicas en Linux](Capitulo06/README.md)
+### [Práctica 6. Diagnóstico y configuraciones básicas](Capitulo06/README.md)
 
   - **Descripción**: Configurar y diagnosticar la conectividad de red en Linux mediante la administración de interfaces, la resolución de nombres DNS, la auditoría de servicios activos y la transferencia segura de datos entre hosts para garantizar una comunicación eficiente y protegida.
 
