@@ -15,7 +15,7 @@ Al finalizar la práctica, serás capaz de conocer los siguientes conceptos:
 <br/><br/>
 
 ## Tiempo estimado
-- 70 minutos.
+- 120 minutos.
 <br/><br/>
 
 ## Objetivo visual 
