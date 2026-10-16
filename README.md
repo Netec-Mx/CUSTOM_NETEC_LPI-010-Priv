@@ -23,18 +23,18 @@ Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia pr
   - ⏱️ **Duración estimada**: 120 min.
 
 
-### [Práctica 2. Gestión de Usuarios, Grupos y Permisos](Capitulo02/README.md)
+### [Práctica 2. Crear usuarios y configurar permisos en archivos y directorios](Capitulo02/README.md)
 
   - **Descripción**: Administrar el control de acceso y la identidad en Linux mediante la gestión de usuarios y grupos, la aplicación de permisos estándar y especiales, y la delegación segura de privilegios para garantizar la integridad y confidencialidad del sistema.
 
   - ⏱️ **Duración estimada**: 120 min.
 
 
-### [Práctica 3. Herramientas de Usuario y Redirección](Capitulo03/README.md)
+### [Práctica 3.Construir pipelines y usar filtros para extraer datos](Capitulo03/README.md)
 
   - **Descripción**: Dominar el procesamiento de información en Linux mediante el uso de tuberías, redirecciones y filtros de texto, complementado con el manejo del editor Vim para la administración eficiente de archivos y flujos de datos del sistema.
 
-  - ⏱️**Duración estimada**: 120 min.
+  - ⏱️**Duración estimada**: 80 min.
 
 
 ### [Práctica 4. Sistema operativo Linux](Capitulo04/README.md)
