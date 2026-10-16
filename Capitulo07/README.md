@@ -4,7 +4,7 @@
 
 | Duration | Complexity | Bloom level |
 |---|---|---|
-| 223 minutos | Difícil | Crear |
+| 120 minutos | Difícil | Crear |
 
 ## Descripción General
 
