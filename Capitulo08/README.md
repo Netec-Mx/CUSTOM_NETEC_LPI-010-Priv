@@ -4,7 +4,7 @@
 
 | Campo | Valor |
 |---|---|
-| Duración | 131 minutos |
+| Duración | 120 minutos |
 | Complejidad | Difícil |
 | Nivel de Bloom | Aplicar |
 
