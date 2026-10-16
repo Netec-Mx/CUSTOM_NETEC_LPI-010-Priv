@@ -44,7 +44,7 @@ Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia pr
   - ⏱️**Duración estimada**: 80 min.
 
 
-### [Práctica 5. Gestión de Software y Paquetes](Capitulo05/README.md)
+### [Práctica 5. Instalar y actualizar paquetes en una VM/distro seleccionada](Capitulo05/README.md)
 
   - **Descripción**: Administrar el ciclo de vida del software en Linux mediante el uso de gestores de paquetes de alto y bajo nivel, la resolución de dependencias y la configuración de repositorios para garantizar un sistema actualizado, seguro y funcional.
 
