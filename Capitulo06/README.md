@@ -35,6 +35,7 @@ En las distribuciones modernas, el comando `ip` ha sustituido al antiguo `ifconf
 | **Desactivar Interfaz**| `sudo ip link set eth0 down` | `ifconfig eth0 down` |
 | **Ver Tabla de Rutas** | `ip route show` | `route -n` / `netstat -rn` |
 | **Ver Vecinos (ARP)** | `ip neighbor` | `arp -n` |
+
 ---
 
 ## Herramientas de Diagnóstico y Pruebas
@@ -48,6 +49,7 @@ Estas herramientas permiten verificar si el tráfico fluye correctamente hacia e
 | **dig** | Consultar registros DNS detallados. | `dig linux.org` |
 | **host** | Resolución rápida de Nombre a IP y viceversa. | `host google.com` |
 | **nmcli** | Gestionar conexiones en sistemas con NetworkManager.| `nmcli device status` |
+
 ---
 
 ## Puertos, Sockets y Servicios Escuchando
@@ -60,6 +62,7 @@ Para la seguridad del servidor, es crítico saber qué programas están abriendo
 | **netstat** | Ver conexiones de red y puertos abiertos. | `netstat -pant` |
 | **lsof** | Listar archivos (y puertos) abiertos por procesos. | `sudo lsof -i :80` |
 | **nmap** | Escáner de seguridad y puertos (externo). | `nmap localhost` |
+
 ---
 
 ## Transferencia de Archivos y Acceso Remoto
@@ -73,6 +76,7 @@ Protocolos seguros para mover datos entre servidores sin exponer contraseñas en
 | **sftp** | Protocolo de transferencia de archivos sobre SSH. | `sftp usuario@servidor` |
 | **wget** | Descargar archivos directamente desde la web. | `wget https://sitio.com/file.zip` |
 | **curl** | Transferir datos desde/hacia un servidor (API/Web). | `curl -I google.com` |
+
 <br/><br/>
 
 ## Instrucciones 
