@@ -31,6 +31,7 @@ Al finalizar la práctica, serás capaz de manejar la:
 | **Cruzar Particiones** | No permitido. | Permitido. |
 | **Si borras original** | El dato sigue accesible. | El enlace queda roto. |
 | **Directorios** | No permitido. | Permitido. |
+
 <br/><br/>
 
 ## Instrucciones 
